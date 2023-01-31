@@ -9,4 +9,5 @@ Go to the link: https://lsolovyeva.github.io/aerial-gymnastics-encyclopedia/
 ## TODOs
 
 - Reduce images size
-- fix scrolling in purchase.html#mailto
+- Fix scrolling in purchase.html#mailto
+- Resize images in purchase.html and about.html
