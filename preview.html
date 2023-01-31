@@ -35,38 +35,23 @@ https://developer.adobe.com/console/projects/1100442/4566206088344897060/apis/Vi
 -->
 
 <!-- "https://gitlab.com/lessy09/aerial-gymnastics-encyclopedia/-/blob/main/files/demo.pdf"-->
- <div id="adobe-dc-view" style="height: 800px; width: 900px;"></div> <!-- height: 360px; width: 500px;-->
-<script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
-	<script type="text/javascript" src="login.js"></script>
-
- <script type="text/javascript">
+    <div id="adobe-dc-view" style="height: 800px; width: 900px;"></div> <!-- height: 360px; width: 500px;-->
+    <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+  <script type="text/javascript">
   //Change URL on the fly: 
   //window.history.pushState('preview', 'Title', 'preview2.html');
   if (validateParameters() == true) {
-  document.addEventListener("adobe_dc_view_sdk.ready", function(){
-    var adobeDCView = new AdobeDC.View({clientId: "5b0a8656ad40443a873cddcfeb60b7d9", divId: "adobe-dc-view"});
-    adobeDCView.previewFile({
-      content:{ location:{ url: "files/demo.pdf"}},
-      metaData:{fileName: "Demo.pdf"}
-    },
-    {embedMode: "SIZED_CONTAINER"},
-    {showDownloadPDF: false},
-    {showPrintPDF: false}
-   );
-  });
-
-    document.addEventListener("adobe_dc_view_sdk.ready", function(){
-    var adobeDCView = new AdobeDC.View({clientId: "5b0a8656ad40443a873cddcfeb60b7d9", divId: "adobe-dc-view"});
-    adobeDCView.previewFile({
-      content:{ location:
-        { url: "files/demo.pdf"
-        }},
-      metaData:{fileName: "Demo.pdf"}
-    },
-    {embedMode: "SIZED_CONTAINER"},
-    {showDownloadPDF: false}
-			   );
-  });
+  	document.addEventListener("adobe_dc_view_sdk.ready", function(){
+    	var adobeDCView = new AdobeDC.View({clientId: "5b0a8656ad40443a873cddcfeb60b7d9", divId: "adobe-dc-view"});
+    	adobeDCView.previewFile({
+      	content:{ location:{ url: "files/demo.pdf"}},
+      	metaData:{fileName: "Demo.pdf"}
+    	},
+    	{embedMode: "SIZED_CONTAINER"},
+    	{showDownloadPDF: false},
+    	{showPrintPDF: false});
+  	});
   }
 </script>
 	   
