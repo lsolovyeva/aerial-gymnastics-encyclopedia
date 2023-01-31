@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AERIAL BOOK</title>
+		<link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+    <body>
+
+		<div class="inner">
+			<header class="align-center">
+				<h2>Войдите в систему для получения доступа к книге</h2>
+			</header>
+		</div>
+
+<!-- Login validation -->
+	<script>
+    	function validatelogin() {
+    	var username = document.getElementById("username").value;
+    	var password = document.getElementById("password").value;
+		if (username == "arriba" && password == "arriba") {
+        //alert("Вход в систему выполнен успешно!");
+    	    document.getElementById('infoContainer').style.display = "block";
+    	    document.getElementById('loginContainer').style.display = "none";
+			window.location.href = "https://lessy09.gitlab.io/aerial-gymnastics-encyclopedia/preview.html?username=" + username;
+    	    return true;
+    	} else {
+    	    //alert("Ошибка: неправильный логин или пароль.");
+    	    document.getElementById('alertContainer1').style.display = "block";
+    	    return false;
+    	}
+	}
+	</script>
+
+<!-- Alerts and infos -->
+	<br>
+	<div class="container" id="alertContainer1" style="width: 30em; display:none;">
+		 <div class="alert alert-warning">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close" onclick="closeWarningWindow('alertContainer1');">&times;</a>
+  			<strong>Ошибка:</strong> неправильный логин или пароль.
+		</div>
+	</div>
+
+	<div class="container" id="infoContainer" style="width: 30em; display:none;">
+		 <div class="alert alert-success">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close" onclick="closeWarningWindow('infoContainer');">&times;</a>
+  			Вход в систему выполнен успешно!
+		</div>
+	</div>
+	
+
+<!-- Login -->
+	<div class="container align-center" id="loginContainer" style="width: 20em">
+		<input type="text" placeholder="Логин" name="username" id="username" required>
+		<input type="password" placeholder="Пароль" name="password" id="password" required>
+		<button type="submit" id="submitBtn" onclick="validatelogin()">Войти</button>
+	</div>
+
+<div class="inner">
+			<header class="align-center">
+			<br/>	
+	<p> ✽ Для входа укажите свою почту или номер телефона в поле "Логин" и личный пароль, полученный после покупки в поле "Пароль".
+		<br/>
+		&emsp; В случае потери доступа или наличии вопросов свяжитесь <a href="purchase.html#mailto"> с автором. </a>
+	</p>
+			</header>
+</div>
+
+
+	<script type="text/javascript" src="login.js"></script>
+
+    </body>
+</html>
