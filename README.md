@@ -1,1 +1,12 @@
 # aerial-gymnastics-encyclopedia
+
+A GitLab Pages project for aerial silks encyclopedia.
+
+## Open a website
+
+Go to the link: https://lsolovyeva.github.io/aerial-gymnastics-encyclopedia/
+
+## TODOs
+
+- Reduce images size
+- fix scrolling in purchase.html#mailto
