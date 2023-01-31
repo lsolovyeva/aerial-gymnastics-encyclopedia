@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AERIAL BOOK</title>
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+     <body>
+    
+
+
+<!-- For Browser only, not suported in mobile devices -->
+<!--Option 1: <embed src="files/demo.pdf" width="100%" height="600px"/> -->
+<!-- Option 2: <a href="files/demo.pdf"> --->
+
+<!-- Bad idea: <iframe
+    src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://gitlab.com/lessy09/aerial-gymnastics-encyclopedia/-/blob/main/files/demo.pdff#toolbar=0&scrollbar=0"
+    frameBorder="0"
+    scrolling="auto"
+    height="100%"
+    width="100%"
+></iframe>-->
+
+<!-- Useful links:
+https://developer.adobe.com/document-services/docs/overview/pdf-embed-api/
+https://developer.adobe.com/document-services/apis/pdf-embed/
+https://www.youtube.com/watch?v=hb1v10wM9ZU
+https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe
+https://github.com/lubomirkamensky/klselektro/blob/2e7799fcb8102bf19a6e52f373020a7f5589a63c/docs/akce.html
+https://developer.adobe.com/creative-cloud-libraries/docs/integrate/setup/developer-credentials/
+https://developer.adobe.com/console/projects/1100442/4566206088344897060/apis/ViewSDK/details
+-->
+
+<!-- "https://gitlab.com/lessy09/aerial-gymnastics-encyclopedia/-/blob/main/files/demo.pdf"-->
+ <div id="adobe-dc-view" style="height: 800px; width: 900px;"></div> <!-- height: 360px; width: 500px;-->
+<script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+	<script type="text/javascript" src="login.js"></script>
+
+ <script type="text/javascript">
+  //Change URL on the fly: 
+  //window.history.pushState('preview', 'Title', 'preview2.html');
+  if (validateParameters() == true) {
+  document.addEventListener("adobe_dc_view_sdk.ready", function(){
+    var adobeDCView = new AdobeDC.View({clientId: "5b0a8656ad40443a873cddcfeb60b7d9", divId: "adobe-dc-view"});
+    adobeDCView.previewFile({
+      content:{ location:
+        { url: "files/demo.pdf"
+        }},
+      metaData:{fileName: "Demo.pdf"}
+    },
+    {
+      embedMode: "SIZED_CONTAINER"
+    });
+  });
+
+    document.addEventListener("adobe_dc_view_sdk.ready", function(){
+    var adobeDCView = new AdobeDC.View({clientId: "5b0a8656ad40443a873cddcfeb60b7d9", divId: "adobe-dc-view"});
+    adobeDCView.previewFile({
+      content:{ location:
+        { url: "files/demo.pdf"
+        }},
+      metaData:{fileName: "Demo.pdf"}
+    },
+    {
+      embedMode: "SIZED_CONTAINER"
+    });
+  });
+  }
+</script> 
+
+
+<!-- Old version of adobe, not loading: <div id="adobe-dc-view" style="height: 100%; width: 100%;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+  document.addEventListener("adobe_dc_view_sdk.ready", function(){
+    var adobeDCView = new AdobeDC.View({clientId: "3c09c583428b41979c644934ddddaea4", divId: "adobe-dc-view"});
+    adobeDCView.previewFile({
+      content:{ location:
+        { url: "files/demo.pdf"}},
+      metaData:{fileName: "Demo"}
+    },
+    {
+      embedMode: "SIZED_CONTAINER"
+    });
+  });
+</script>-->
+
+	<p align="center"> © Л.А.Соловьева, 2023 </p>
+
+    </body>
+</html>
