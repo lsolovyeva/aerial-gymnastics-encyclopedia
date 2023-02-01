@@ -6,6 +6,14 @@
     </head>
     <body>
 
+	<script>
+		window.onload = function() {
+			if (localStorage.getItem('register_counter') == 'NaN'|| localStorage.getItem('register_counter') == null) 
+			{localStorage.setItem('register_counter', '0');}
+			localStorage.setItem('register_counter', parseInt(localStorage.getItem('register_counter'))+1);
+		};
+	</script>
+
 		<div class="inner">
 			<header class="align-center">
 				<h2>Войдите в систему для получения доступа к книге</h2>
