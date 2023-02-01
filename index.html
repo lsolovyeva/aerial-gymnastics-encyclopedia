@@ -10,6 +10,14 @@
     </head>
     <body>
 
+	<script>
+		window.onload = function() {
+			if (localStorage.getItem('index_counter') == 'NaN'|| localStorage.getItem('index_counter') == null) 
+			{localStorage.setItem('index_counter', '0');}
+			localStorage.setItem('index_counter', parseInt(localStorage.getItem('index_counter'))+1);
+		};
+	</script>
+
 <!-- Banner -->
 	<section id="banner">
 		<nav id="mynavbar" class="navPanel" style="position: absolute; top: 1em; margin: 5px;">
