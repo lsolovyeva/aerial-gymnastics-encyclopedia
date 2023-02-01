@@ -9,6 +9,14 @@
     <script type="text/javascript" src="w3-include-html.js"></script>
 
     <body>
+	    <script>
+		window.onload = function() {
+			if (localStorage.getItem('about_counter') == 'NaN'|| localStorage.getItem('about_counter') == null) 
+			{localStorage.setItem('about_counter', '0');}
+			localStorage.setItem('about_counter', parseInt(localStorage.getItem('about_counter'))+1);
+		};
+	</script>
+
         <div w3-include-html="banner.html"></div>
         <script> includeHTML(); </script>
 
