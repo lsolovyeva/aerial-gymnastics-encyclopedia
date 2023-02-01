@@ -1,0 +1,15 @@
+<div>
+  <p id="IndexVisitor">Index visited = </p>
+  <p id="AboutVisitor">About visited = </p>
+  <p id="PurchaseVisitor">Purchase visited = </p>
+  <p id="RegisterVisitor">Register visited = </p>
+  <p id="PreviewVisitor">Preview visited = </p>
+
+</div>
+<script>
+  document.getElementById('IndexVisitor').innerHTML +=  localStorage.getItem('index_counter');
+  document.getElementById('AboutVisitor').innerHTML +=  localStorage.getItem('about_counter');
+  document.getElementById('PurchaseVisitor').innerHTML +=  localStorage.getItem('purchase_counter');
+  document.getElementById('RegisterVisitor').innerHTML +=  localStorage.getItem('register_counter');
+  document.getElementById('PreviewVisitor').innerHTML +=  localStorage.getItem('preview_counter');
+</script>
