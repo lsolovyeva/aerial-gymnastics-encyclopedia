@@ -10,7 +10,13 @@
     </head>
      <body>
     
-
+	<script>
+		window.onload = function() {
+      		if (localStorage.getItem('preview_counter') == 'NaN'|| localStorage.getItem('preview_counter') == null) 
+		{localStorage.setItem('preview_counter', '0');}
+		localStorage.setItem('preview_counter', parseInt(localStorage.getItem('preview_counter'))+1);
+		};
+	</script>
 
 <!-- For Browser only, not suported in mobile devices -->
 <!--Option 1: <embed src="files/demo.pdf" width="100%" height="600px"/> -->
