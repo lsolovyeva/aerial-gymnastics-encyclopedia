@@ -3,10 +3,18 @@
     <head>
         <title>AERIAL BOOK</title>
 		<link rel="stylesheet" href="css/main.css" />
-
+		<link rel="icon" type="images/x-icon" href="images/favicon2.ico"/>
+		<meta property="og:image" content="https://github.com/lsolovyeva/aerial-gymnastics-encyclopedia/raw/main/images/bookcover.jpg">
+	    
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    var url = window.location.href;
+    if (url.search( 'sent_mail' ) > 0 ) {
+      document.getElementById('infoContainer').style.display = "block";
+    }
+  </script>
     </head>
     <body>
 
@@ -112,36 +120,6 @@
 	</section>
 
 
-
-
-
-	 <!--<div style="width:1000; text-align:center; height:500;">
-		<div style="display:block;">
-        	<div> 
-            	<iframe src="https://drive.google.com/file/d/1facwFYlXSYQFstDPZYJ7wRAkjf93e37S/preview?usp=embed_googleplus" frameborder="1">
-				</iframe>-->
-<!--
-      <iframe 
-src="https://docs.google.com/viewer?url=https://drive.google.com/file/d/1facwFYlXSYQFstDPZYJ7wRAkjf93e37S/preview&embedded=true"   width="640" height="480" frameborder="0" scrolling="no" seamless=""></iframe>
-
-
-				<iframe sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation"
-        src="https://docs.google.com/gview?embedded=true&url=https://drive.google.com/file/d/1facwFYlXSYQFstDPZYJ7wRAkjf93e37S/view?t=1625427767140"
-        width="640" height="480"></iframe>
-        	</div>
-			</div>
-	</div> 
--->
-<!--<object data="mypdf.pdf" type="application/pdf" frameborder="0" width="100%" height="600px" style="padding: 20px;">
-    <embed src="files/demo.pdf" width="100%" height="600px"/> 
-</object> -->
-
-    <!-- Error on mobile device: Plugin not supported
-	<embed src="files/demo.pdf" width="100%" height="600px"/> 
-	-->
-
-
-
 <div class="alert alert-info" style="width: 60%; display: table; margin-right: auto; margin-left: auto; background-color: #f2e9e2; border: rgb(210, 128, 77)">
 	<p align="center" style="color: #60303fee"> <b>Получите книгу удобным для вас способом и открывайте ее на любом устройстве! </b></p> 
 	<p style="right: 200px; color: rgb(210, 128, 77)"> - Получить доступ к DOC файлу в Google Docs по вашей gmail почте</p>
@@ -151,7 +129,68 @@ src="https://docs.google.com/viewer?url=https://drive.google.com/file/d/1facwFYl
 	</p>
 </div>
 
-	<p align="center"> © Л.А.Соловьева, 2023 </p>
+	<script>
+    	function validateSendChoise() {
+			if (document.getElementById('username').value != '' 
+			&& document.getElementById('surname').value != ''
+			&& document.getElementById('usermail').value != ''
+			&& document.getElementById("usermail").validity.valid) {
+    	    	document.getElementById('alertContainer1').style.display = "none";
+    	    	document.getElementById('infoContainer').style.display = "block";
+			} else {
+    	    	document.getElementById('alertContainer1').style.display = "block";
+			}
+    	    return true;
+		}
+	</script>
+										  
 
+	<div class="container" id="alertContainer1" style="width: 30em; display:none;">
+		 <div class="alert alert-warning">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close" onclick="closeWarningWindow('alertContainer1');">&times;</a>
+  			<strong>Ошибка:</strong> неправильно заполнены поля формы.
+		</div>
+	</div>
+
+	<div class="container" id="infoContainer" style="width: 30em; display:none;">
+		 <div class="alert alert-success">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close" onclick="closeWarningWindow('infoContainer');">&times;</a>
+  			Сообщение отправлено!
+		</div>
+	</div>
+	</br>
+																	
+
+<form action="https://formsubmit.co/cb78724874ec8736f761cad292e14f2c" method="POST"
+ class="container align-center" id="loginContainer" style="width: 30%; display: table; margin-right: auto; margin-left: auto; background-color: #f2e9e2; border: rgb(210, 128, 77)">
+		</br>
+		<p style="color: #60303fee"> <b>Форма заказа</b></p> 
+		<input type="hidden" name="_captcha" value="false">
+		<input type="hidden" name="_next" value="https://lessy09.gitlab.io/aerial-gymnastics-encyclopedia?sent_mail=1">
+		<input type="text" placeholder="Ваше имя" name="username" id="username" style="background-color: white" required 
+		oninvalid="this.setCustomValidity('Укажите ваше имя')" oninput="setCustomValidity('')">
+		<input type="text" placeholder="Ваша фамилия" name="surname" id="surname" style="background-color: white" required
+		oninvalid="this.setCustomValidity('Укажите вашу фамилию')" oninput="setCustomValidity('')">
+		<input type="email" placeholder="Адрес электронной почты" name="usermail" id="usermail" style="background-color: white" required
+		oninvalid="this.setCustomValidity('Укажите вашу почту')" oninput="setCustomValidity('')">
+		</br>
+	  	<label align="left" for="choiseslist">Выберите набор:</label>
+		<select name="choiseslist" id="choiseslist" style="background-color: white; appearance: menulist">
+    		<option value="all">Вся книга</option>
+    		<option value="l1">Уровень 1</option>
+    		<option value="l2">Уровень 2</option>
+    		<option value="l3">Уровень 3</option>
+			<option value="l1l2">Уровень 1+2</option>
+			<option value="l2l3">Уровень 2+3</option>
+  		</select>
+		</br>
+		<button type="submit" id="submitBtn" style="background-color: rgb(210, 128, 77)" onclick="validateSendChoise()">Сделать заказ</button>
+		</br>
+		</br>
+</form>
+</br>																	
+																	
+	<p align="center"> © Л.А.Соловьева, 2023 </p>
+	<script type="text/javascript" src="login.js"></script>
     </body>
 </html>
