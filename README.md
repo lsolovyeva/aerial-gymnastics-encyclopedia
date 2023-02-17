@@ -11,3 +11,4 @@ Go to the link: https://lsolovyeva.github.io/aerial-gymnastics-encyclopedia/
 - Reduce images size
 - Fix scrolling in purchase.html#mailto
 - Resize images in purchase.html and about.html
+- Check validation with input mail starting with numbers
