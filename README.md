@@ -1,6 +1,7 @@
 # aerial-gymnastics-encyclopedia
 
 A GitLab Pages project for aerial silks encyclopedia.
+Built with HTML5.
 
 ## Open a website
 
